@@ -1,4 +1,3 @@
-# EKS-bastion-modules
 ## Deploy `Vault` For `EKS` Cluster Using Vault Image From `Elastic Container Registry ECR`
 # DOCUMENTATION `Steps` and `Commands`:
 _______________________________________________________________________________
