@@ -2,18 +2,14 @@
 # DOCUMENTATION `Steps` and `Commands`:
 _______________________________________________________________________________
 ##### This Terraform project creates a custom VPC with public and private subnets, an EC2 bastion host with a security group in the public subnet, an EKS cluster with a network interface in the public subnet, and two EKS node groups in the public and private subnets. IAM roles are created for the EKS cluster and node groups, and the necessary policies are attached to them. Additionally, a null resource with remote-exec is used to copy the pem key to the bastion host so that the admin can access the node group from the bastion host. An Elastic IP is also allocated to the bastion host to provide a static public IP address.
+
+![alt text](Diagram.jpeg)
+
 note:
-You must also have AWS credentials set up on your local machine. <br>
-creat a key-value pair named "eks-terraform-key" and copy the pem file to `private-key/eks-terraform-key.pem`
-and This command creates a parameter named `eks-terraform-key` with the value `your_value_here` and data type `String`.
-```
-aws ssm put-parameter --name "eks-terraform-key" --value "your_value_here" --type "String"
-```
-then to get the value of a key-value pair, you can use the aws ssm get-parameter command
-```
-aws ssm get-parameter --name "eks-terraform-key"
-```
-#This command retrieves the value of the parameter named `eks-terraform-key`
+You must also have AWS credentials set up on your local machine.
+from the your aws accont on console go to EC2 DashBords--> key pairs--> creat key pair named <eks-terraform-key> once it created it will Downloded the public ssh key to your local downloded folder then  you should create new folder name  <private-key> in the same path of you terraform fils  then copy the public key (pem file) from downlod folder to the <private-key> folder so the terraform will see it.(you can change the key and his folder name but u should change  him in the code )
+
+
 # Details
 
 ## VPC
