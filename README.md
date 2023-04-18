@@ -6,9 +6,10 @@ _______________________________________________________________________________
 ![alt text](Diagram.jpeg)
 
 note:
-You must also have AWS credentials set up on your local machine.
-from the your aws accont on console go to EC2 DashBords--> key pairs--> creat key pair named <eks-terraform-key> once it created it will Downloded the public ssh key to your local downloded folder then  you should create new folder name  <private-key> in the same path of you terraform fils  then copy the public key (pem file) from downlod folder to the <private-key> folder so the terraform will see it.(you can change the key and his folder name but u should change  him in the code )
-
+* You must also have AWS credentials set up on your local machine follow the steps:
+`from the console your aws accont go to EC2 Dashbords--> key pairs--> creat key pair named <eks-terraform-key> once it created it will Downlode the public ssh key to your local downlode folder then  you should create new folder name  <private-key> in the same path of you terraform fils then copy the public key (pem file) from downlode folder to the <private-key> folder so the terraform will see it.
+(you can change the key and his folder name but u should change  him in the code )`
+note:u can create the key with commands but the console way is simpler.
 
 # Details
 
