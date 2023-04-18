@@ -5,11 +5,6 @@
 ![alt text](Diagram.jpeg)
 
 # DOCUMENTATION `Steps` and `Commands`:
-note:
-* You must also have AWS credentials set up on your local machine follow the steps:
-`from the console your aws accont go to EC2 Dashbords--> key pairs--> creat key pair named <eks-terraform-key> once it created it will Downlode the public ssh key to your local downlode folder then  you should create new folder name  <private-key> in the same path of you terraform fils then copy the public key (pem file) from downlode folder to the <private-key> folder so the terraform will see it.
-(you can change the key and his folder name but u should change  him in the code )`
-note:u can create the key with commands but the console way is simpler.
 
 ## The Modules:
 
@@ -22,6 +17,13 @@ The VPC is created using the `vpc` Terraform module, which sets up a custom VPC 
 The EC2 bastion host is created using the bastion Terraform module, which uses the `ec2_instance` module to create the instance. The bastion host is placed in a security group that allows incoming SSH traffic from the user's IP address. An Elastic IP is allocated to the bastion host to provide a static public IP address.
 
 Additionally, a `null resource` is used with `remote-exec` to copy the pem key to the bastion host so that the admin can access the node group from the bastion host.
+
+- note:
+ You must also have AWS credentials set up on your local machine follow the steps:
+`from the console your aws accont go to EC2 Dashbords--> key pairs--> creat key pair named <eks-terraform-key> once it created it will Downlode the public ssh key to your local downlode folder then  you should create new folder name  <private-key> in the same path of you terraform fils then copy the public key (pem file) from downlode folder to the <private-key> folder so the terraform will see it.
+(you can change the key and his folder name but u should change  him in the code )`
+note:u can create the key with commands but the console way is simpler.
+
 
 ### 3- `EKS Cluster`
 
